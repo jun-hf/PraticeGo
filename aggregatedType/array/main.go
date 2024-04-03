@@ -28,7 +28,7 @@ func compareBitCount(a [32]uint8, b [32]uint8) int {
 	return difference
 }
 
-func main() {
+func example() {
 	c1 := sha256.Sum256([]byte("x"))
 	c2 := sha256.Sum256([]byte("X"))
 	fmt.Println(compareBitCount(c1, c2))
