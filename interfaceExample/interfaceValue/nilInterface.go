@@ -1,8 +1,7 @@
-package main
+package interfacevalue
 
 import (
 	"bytes"
-	"fmt"
 	"io"
 )
 const debug = true
@@ -19,5 +18,6 @@ func main() {
 		buf = new(bytes.Buffer)
 	}
 	fo(buf)
-	fmt.Println(buf.String())
+	buf.String()
+
 }
