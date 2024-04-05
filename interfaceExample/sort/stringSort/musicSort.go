@@ -1,4 +1,4 @@
-package main
+package stringSort
 
 import (
 	"fmt"
@@ -49,8 +49,31 @@ func (b byArtist) Less(i, j int) bool {
 
 func (b byArtist) Swap(i, j int) { b[i], b[j] = b[j], b[i] }
 
-func main() {
-	printTracks(tracks)
+type customSort struct {
+	t []*Track
+	less func(x, y *Track) bool
+}
+
+func (c customSort) Len() int {
+	return len(c.t)
+}
+
+func (c customSort) Less(i, j int) bool{
+	return c.less(c.t[i], c.t[j])
+}
+
+func (c customSort) Swap(i, j int) {
+	c.t[i], c.t[j] = c.t[j], c.t[i]
+}
+
+
+func M() {
 	sort.Sort(byArtist(tracks))
-	printTracks(tracks)
+	fmt.Println(tracks)
+	sort.Sort(customSort{tracks, func(x, y *Track) bool {
+		if x.Title != y.Title {
+			return x.Title < y.Title
+		}
+		return false
+	}})
 }

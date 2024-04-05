@@ -1,6 +1,7 @@
 package stringSort
 
 import (
+	"fmt"
 	"sort"
 )
 
@@ -20,8 +21,9 @@ func (s StringSlice) Swap(i, j int) {
 	s[i], s[j] = s[j], s[i]
 }
 
-func main() [
+func main() {
 	names := []string{"Hihdid", "a", "B"}
 	sort.Strings(names)
 	fmt.Println(names)
-]
+
+}
