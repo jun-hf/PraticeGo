@@ -6,18 +6,16 @@ import (
 )
 const debug = true
 
-func fo(out io.Writer) {
+func Fo(out io.Writer) {
 	if out != nil {
 		out.Write([]byte("JIJ"))
 	}
 }
 
-func main() {
+func M(){
 	var buf *bytes.Buffer
 	if debug {
 		buf = new(bytes.Buffer)
 	}
-	fo(buf)
-	buf.String()
-
+	Fo(buf)
 }

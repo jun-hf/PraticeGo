@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func e() {
+func E() {
 	var w io.Writer = os.Stdout
 	w.Write([]byte("Hello"))
 
