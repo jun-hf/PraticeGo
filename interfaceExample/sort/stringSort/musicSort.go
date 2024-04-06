@@ -76,4 +76,5 @@ func M() {
 		}
 		return false
 	}})
+	sort.IntsAreSorted([]int{1, 2, 3})
 }
