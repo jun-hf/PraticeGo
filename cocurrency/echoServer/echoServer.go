@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-func main() {
+func main1() {
 	lis, err := net.Listen("tcp", "localhost:8080")
 	if err != nil {
 		log.Fatal(err)
